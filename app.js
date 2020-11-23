@@ -100,6 +100,7 @@ function empezarJuego() {
 
         // Finalmente, para cada tirada, añadimos una fila en la tabla
         tabla.appendChild(fila);
+        premio='';
     }
 }
 
