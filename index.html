@@ -6,15 +6,19 @@
     <link rel="stylesheet" href="styles.css">
     <script src="app.js"></script>
 </head>
+
 <header>
+    <!--Título-->
     <table border="12" bgcolor="Window">
         <th>las hortalizas</th>
     </table>
-    <table  id="displayPremio" border="12" bgcolor="Window">
+    <!--Premios y monedas actuales-->
+    <table id="displayPremio" border="12" bgcolor="Window">
         <th id="mensajePremio">PREMIO:</th>
         <th id="imprimeMonedas">0 <img src="img/euro.png" alt=""></th>
     </table>
 </header>
+
 <body>
 <!--Crear 3 cuadrados, en los cuales se insertarán las frutas (puede ser en una imagen o en background)-->
 <table class="slots" border="6" bgcolor="Window">
@@ -24,34 +28,24 @@
 </table>
 
 <table class="botonera" border="6" bgcolor="Window">
-  
-       <th> <button type="button" onclick="salirJuego()">Salir</button></th>
-        <th><button type="button" id="botonMonedas" onclick="incrementaMonedas()">Introducir Monedas</button></th>
-    <th><button type="button" onclick="empezarJuego()">Tirar</button></th>
-
+    <th>
+        <button type="button" onclick="salirJuego()">Salir</button>
+    </th>
+    <th>
+        <button type="button" id="botonMonedas" onclick="incrementaMonedas()">Introducir Monedas</button>
+    </th>
+    <th>
+        <button type="button" onclick="empezarJuego()">Tirar</button>
+    </th>
 </table>
-<!--<div class="botonMonedas">-->
-<!--    <button type="button" id="botonMonedas" onclick="incrementaMonedas()">Introducir Monedas</button>-->
-<!--</div>-->
-<!--<div class="botonEmpezar">-->
-<!--    <button type="button" onclick="empezarJuego()">Tirar</button>-->
-<!--</div>-->
-<!--<div class="botonSalir">-->
-<!--    <button type="button" onclick="salirJuego()">Salir</button>-->
-<!--</div>-->
-<table class="todaLaTabla" border="5" bgcolor="Window">
-    
-    <thead>
-    <tr>
-        <th>Tirada</th>
-        <th>Resultado</th>
-        <th>Monedas ganadas</th>
-        <th>Monedas perdidas</th>
-    </tr>
-    </thead>
+
+<table class="todaLaTabla" border="6" bgcolor="Window">
+    <th>Tirada</th>
+    <th>Resultado</th>
+    <th>Monedas ganadas</th>
+    <th>Monedas perdidas</th>
     <tbody id="filaTirada"></tbody>
 </table>
-
 
 </body>
 </html>

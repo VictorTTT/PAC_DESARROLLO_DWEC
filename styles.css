@@ -1,5 +1,6 @@
 * {
-    font: bold 22px LetrasDigitasles, Verdana, sans-serif;
+
+    font: bold 18px LetrasDigitasles, Verdana, sans-serif;
     color: #1c7430;
 }
 
@@ -14,11 +15,11 @@ header {
 }
 
 header table th {
-    font-size: 65px;
+    font-size: 55px;
 }
 
 #displayPremio th{
-    font-size: 25px;
+    font-size: 29px;
 }
 
 .slots {
@@ -72,7 +73,7 @@ header table th {
 }
 
 #imprimeMonedas {
-    float: right;
+    float: left;
     width: 40%;
 }
 
@@ -81,7 +82,8 @@ header table th {
 }
 
 #mensajePremio {
-    float: left;
+    text-align: left;
+    float: right;
     width: 40%;
     height: 100%
 }
