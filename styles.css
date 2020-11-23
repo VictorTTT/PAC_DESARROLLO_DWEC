@@ -1,5 +1,5 @@
 * {
-    font: bold 18px LetrasDigitasles, Verdana, sans-serif;
+    font: bold 22px LetrasDigitasles, Verdana, sans-serif;
     color: #1c7430;
 }
 
@@ -14,6 +14,10 @@ header {
 }
 
 header table th {
+    font-size: 55px;
+}
+
+#displayPremio th{
     font-size: 25px;
 }
 
