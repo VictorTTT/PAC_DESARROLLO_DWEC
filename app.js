@@ -17,7 +17,7 @@ function incrementaMonedas() {
 
 
 // Funcíon que actúa cuando presionamos el botón tirar
-function empezarJuego() {
+function tirar() {
     if (monedas === 0) {
         alert('Introduzca monedas para jugar');
     } else {
@@ -105,7 +105,7 @@ function empezarJuego() {
 }
 
 //Función que actúa cuando presionamos el botón salir
-function salirJuego() {
+function salir() {
     alert('En total hay  ' + monedas + ' monedas');
     location.reload();
 }

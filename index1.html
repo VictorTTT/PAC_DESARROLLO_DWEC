@@ -9,11 +9,11 @@
 
 <header>
     <!--Título-->
-    <table border="12" bgcolor="Window">
-        <th>las hortalizas</th>
+    <table >
+        <th>Bestfriends jackpot</th>
     </table>
     <!--Premios y monedas actuales-->
-    <table id="displayPremio" border="12" bgcolor="Window">
+    <table id="displayPremio" >
         <th id="mensajePremio">PREMIO:</th>
         <th id="imprimeMonedas">0 <img src="img/euro.png" alt=""></th>
     </table>
@@ -21,25 +21,25 @@
 
 <body>
 <!--Crear 3 cuadrados, en los cuales se insertarán las frutas (puede ser en una imagen o en background)-->
-<table class="slots" border="6" bgcolor="Window">
+<table class="slots" >
     <th><img id="imagen1" src="img/zanahoria.png" alt=""></th>
     <th><img id="imagen2" src="img/zanahoria.png" alt=""></th>
     <th><img id="imagen3" src="img/zanahoria.png" alt=""></th>
 </table>
 
-<table class="botonera" border="6" bgcolor="Window">
+<table class="botonera" >
     <th>
-        <button type="button" onclick="salirJuego()">Salir</button>
+        <button type="button" onclick="salir()">Salir</button>
     </th>
     <th>
         <button type="button" id="botonMonedas" onclick="incrementaMonedas()">Introducir Monedas</button>
     </th>
     <th>
-        <button type="button" onclick="empezarJuego()">Tirar</button>
+        <button type="button" onclick="tirar()">Tirar</button>
     </th>
 </table>
 
-<table class="todaLaTabla" border="6" bgcolor="Window">
+<table class="todaLaTabla" >
     <th>Tirada</th>
     <th>Resultado</th>
     <th>Monedas ganadas</th>

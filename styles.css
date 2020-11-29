@@ -1,13 +1,24 @@
 * {
 
     font: bold 18px LetrasDigitasles, Verdana, sans-serif;
-    color: #1c7430;
+    color: #0F76A0;
+    background-color: black;
 }
-
 @font-face {
     font-family: "LetrasDigitasles";
     src: url("ds-digital-bold.ttf");
 }
+
+table{
+    border:solid #0F76A0 5px;
+    margin-bottom: 1px
+}
+
+
+
+
+
+
 
 header {
     display: grid;
@@ -42,13 +53,13 @@ header table th {
 
 
 .todaLaTabla {
-    border-collapse: collapse;
     table-layout: fixed;
     width: 100%;
 }
 
 .todaLaTabla td {
     text-align: center;
+    border: #0F76A0;
 }
 
 #imagenesTabla {
