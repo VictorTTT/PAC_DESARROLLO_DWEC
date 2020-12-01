@@ -27,80 +27,100 @@ function tirar() {
         //En cada tirada se gasta una moneda
         monedas--;
 
-        //Declaramos los slots y les asignamos una imagen de cada array escogida de forma aleatoria
-        var slot1 = (array1[Math.floor(Math.random() * 7)]);
-        var slot2 = (array2[Math.floor(Math.random() * 7)]);
-        var slot3 = (array3[Math.floor(Math.random() * 7)]);
 
-        //Imprimimos cada imagen en el lugar correspondiente del HTML
-        document.getElementById("imagen1").src = "img/" + slot1 + ".png";
-        document.getElementById("imagen2").src = "img/" + slot2 + ".png";
-        document.getElementById("imagen3").src = "img/" + slot3 + ".png";
 
-        //Vaciamos de la pantalla el premio anterior
-        document.getElementById('mensajePremio').innerHTML = 'PREMIO: ';
 
-        //Si salen tres zanahorias, se ganan diez monedas
-        if (slot1 === 'zanahoria' && slot2 === 'zanahoria' && slot3 === 'zanahoria') {
-            monedas += 10;
-            premio = euro + euro + euro + euro + euro + '<br>' + euro + euro + euro + euro + euro;
-            document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 10';
+
+
+        function girarSlots() {
+           var slot1 = (array1[Math.floor(Math.random() * 7)]);
+            document.getElementById("imagen1").src = "img/" + slot1 + ".png";
+           var slot2 = (array2[Math.floor(Math.random() * 7)]);
+            document.getElementById("imagen2").src = "img/" + slot2 + ".png";
+           var slot3 = (array3[Math.floor(Math.random() * 7)]);
+            document.getElementById("imagen3").src = "img/" + slot3 + ".png";
         }
-        //Si salen dos zanahorias, se ganan cuatro monedas
-        else if (slot1 === 'zanahoria' && slot2 === 'zanahoria' ||
-            slot2 === 'zanahoria' && slot3 === 'zanahoria' ||
-            slot1 === 'zanahoria' && slot3 === 'zanahoria') {
-            monedas += 4;
-            premio = euro + euro + euro + euro;
-            document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 4';
-        }
-        //si sale una zanahoria y 2 hortalizas iguales, se ganan 3 monedas
-        else if (slot1 === slot2 && slot3 === 'zanahoria' ||
-            slot2 === slot3 && slot1 === 'zanahoria' ||
-            slot1 === slot3 && slot2 === 'zanahoria') {
-            monedas += 3
-            premio = euro + euro + euro;
-            document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 3';
-        }
-        //Si sale una zanahoria, se gana una moneda.
-        else if (slot1 === 'zanahoria' || slot2 === 'zanahoria' || slot3 === 'zanahoria') {
-            monedas++;
-            premio = euro;
-            document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 1';
-        }
-        //Si salen tres hortalizas iguales que no sean zanahorias, se ganan cinco monedas
-        else if (slot1 === slot2 && slot2 === slot3) {
-            monedas += 5;
-            premio = euro + euro + euro + euro + euro;
-            document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 5';
-        }
-        //Si salen dos hortalizas iguales que no sean zanahorias, se ganan dos monedas.
-        else if (slot1 === slot2 || slot2 === slot3 || slot1 === slot3) {
-            monedas += 2;
-            premio = euro + euro;
-            document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 2';
-        }
+        var intervaloGiro = setInterval(girarSlots, 30);
 
-        // Actualizamos el contador de monedas después de la tirada
-        document.getElementById('imprimeMonedas').innerHTML = monedas + ' ' + euro;
+        function pararSlot() {
+            var slot1 = (array1[Math.floor(Math.random() * 7)]);
+            document.getElementById("imagen1").src = "img/" + slot1 + ".png";
+            var slot2 = (array2[Math.floor(Math.random() * 7)]);
+            document.getElementById("imagen2").src = "img/" + slot2 + ".png";
+            var slot3 = (array3[Math.floor(Math.random() * 7)]);
+            document.getElementById("imagen3").src = "img/" + slot3 + ".png";
+
+            clearInterval(intervaloGiro);
+            //Vaciamos de la pantalla el premio anterior
+            document.getElementById('mensajePremio').innerHTML = 'PREMIO: ';
+
+            //Si salen tres zanahorias, se ganan diez monedas
+            if (slot1 === 'zanahoria' && slot2 === 'zanahoria' && slot3 === 'zanahoria') {
+                monedas += 10;
+                premio = euro + euro + euro + euro + euro + '<br>' + euro + euro + euro + euro + euro;
+                document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 10';
+            }
+            //Si salen dos zanahorias, se ganan cuatro monedas
+            else if (slot1 === 'zanahoria' && slot2 === 'zanahoria' ||
+                slot2 === 'zanahoria' && slot3 === 'zanahoria' ||
+                slot1 === 'zanahoria' && slot3 === 'zanahoria') {
+                monedas += 4;
+                premio = euro + euro + euro + euro;
+                document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 4';
+            }
+            //si sale una zanahoria y 2 hortalizas iguales, se ganan 3 monedas
+            else if (slot1 === slot2 && slot3 === 'zanahoria' ||
+                slot2 === slot3 && slot1 === 'zanahoria' ||
+                slot1 === slot3 && slot2 === 'zanahoria') {
+                monedas += 3
+                premio = euro + euro + euro;
+                document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 3';
+            }
+            //Si sale una zanahoria, se gana una moneda.
+            else if (slot1 === 'zanahoria' || slot2 === 'zanahoria' || slot3 === 'zanahoria') {
+                monedas++;
+                premio = euro;
+                document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 1';
+            }
+            //Si salen tres hortalizas iguales que no sean zanahorias, se ganan cinco monedas
+            else if (slot1 === slot2 && slot2 === slot3) {
+                monedas += 5;
+                premio = euro + euro + euro + euro + euro;
+                document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 5';
+            }
+            //Si salen dos hortalizas iguales que no sean zanahorias, se ganan dos monedas.
+            else if (slot1 === slot2 || slot2 === slot3 || slot1 === slot3) {
+                monedas += 2;
+                premio = euro + euro;
+                document.getElementById('mensajePremio').innerHTML = 'PREMIO: ' + euro + ' x 2';
+            }
+
+            // Actualizamos el contador de monedas después de la tirada
+            document.getElementById('imprimeMonedas').innerHTML = monedas + ' ' + euro;
 
 
-        //Acceso a la tabla de tiradas mediante el Id
-        var tabla = document.getElementById('filaTirada');
+            //Acceso a la tabla de tiradas mediante el Id
+            var tabla = document.getElementById('filaTirada');
 
-        //Creamos elemento  fila HTML desde JS
-        var fila = document.createElement('tr');
+            //Creamos elemento  fila HTML desde JS
+            var fila = document.createElement('tr');
 
-        //En el interior de la fila incluimos las celdas
-        fila.innerHTML =
-            `<td  id="tirada">${tirada++}</td>
+            //En el interior de la fila incluimos las celdas
+            fila.innerHTML =
+                `<td  id="tirada">${tirada++}</td>
              <td id="imagenesTabla"><img src="img/${slot1}.png" alt=""><img src="img/${slot2}.png" alt=""><img src="img/${slot3}.png" alt=""></td>
              <td id="monedas">${premio}</td>
              <td id="monedas">${euro}</td>`
 
-        // Finalmente, para cada tirada, añadimos una fila en la tabla
-        tabla.appendChild(fila);
-        premio='';
+            // Finalmente, para cada tirada, añadimos una fila en la tabla
+            tabla.appendChild(fila);
+            premio = '';
+        }
+
+        setTimeout(pararSlot, 500);
+
+
+
     }
 }
 
@@ -109,3 +129,9 @@ function salir() {
     alert('En total hay  ' + monedas + ' monedas');
     location.reload();
 }
+
+
+
+
+
+
