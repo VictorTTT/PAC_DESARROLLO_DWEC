@@ -1,3 +1,5 @@
+
+
 //Crear 3 arrays con el nombre de las imágenes adjuntas en cada una de las posiciones.
 var array1 = ['aguacate', 'ajo', 'cebolla', 'pepino', 'puerro', 'tomate', 'zanahoria'];
 var array2 = ['aguacate', 'ajo', 'cebolla', 'pepino', 'puerro', 'tomate', 'zanahoria'];
@@ -33,11 +35,11 @@ function tirar() {
 
 
         function girarSlots() {
-           var slot1 = (array1[Math.floor(Math.random() * 7)]);
+            var slot1 = (array1[Math.floor(Math.random() * 7)]);
             document.getElementById("imagen1").src = "img/" + slot1 + ".png";
-           var slot2 = (array2[Math.floor(Math.random() * 7)]);
+            var slot2 = (array2[Math.floor(Math.random() * 7)]);
             document.getElementById("imagen2").src = "img/" + slot2 + ".png";
-           var slot3 = (array3[Math.floor(Math.random() * 7)]);
+            var slot3 = (array3[Math.floor(Math.random() * 7)]);
             document.getElementById("imagen3").src = "img/" + slot3 + ".png";
         }
         var intervaloGiro = setInterval(girarSlots, 30);
@@ -117,7 +119,7 @@ function tirar() {
             premio = '';
         }
 
-        setTimeout(pararSlot, 500);
+        setTimeout(pararSlot, 1000);
 
 
 
