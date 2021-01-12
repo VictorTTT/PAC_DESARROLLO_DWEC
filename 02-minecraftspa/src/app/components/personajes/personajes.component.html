@@ -1,0 +1,25 @@
+<h1>Personajes <small>Minecraft para Enzo</small></h1>
+<hr>
+
+<!-- Para representar los personajes hemos utilizado las cards de bootstrap-->
+<div class="card-columns">
+    <!-- Dentro de est contenedor hacemos un ngFor para que se creen tantas cards como personajes tenemos en nuestro servicio-->
+    <div class="card animated fadeIn fast" *ngFor="let personaje of personajes; let i = index">
+        <!-- Atención a la sintaxis del ngFor con index, es muy útil-->
+        <!--Estos 'personajes', son los del array de personajes.component.ts-->
+        <img class="card-img-top img-fluid" src="{{personaje.img}}" alt="{{personaje.nombre}}">
+        <div class="card-block">
+            <h4 class="card-title">{{personaje.nombre}}</h4>
+            <p class="card-text">{{personaje.bio}}</p>
+            <p class="card-text"><small class="text-muted">{{personaje.casa}}</small></p>
+            <p class="card-text"><small class="text-muted">{{personaje.aparicion}}</small></p>
+            
+            <button (click)="verPersonaje(i)"
+                    type="button" class="btn btn-outline-primary btn-block">
+                Ver más...
+            </button>
+        
+        </div>
+    </div>
+</div>
+    
